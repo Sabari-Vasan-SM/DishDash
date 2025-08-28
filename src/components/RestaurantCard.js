@@ -1,3 +1,18 @@
+/**
+ * RestaurantCard Component
+ * 
+ * A reusable card component that displays restaurant information including:
+ * - Restaurant image/icon
+ * - Name and rating
+ * - Tags (e.g., "Fast", "Popular")
+ * - Delivery time and fee
+ * - Promoted badge (if applicable)
+ * 
+ * Props:
+ * - restaurant: Object containing restaurant data (name, rating, deliveryTime, etc.)
+ * - onPress: Function called when the card is pressed
+ */
+
 import React from 'react';
 import {
   View,
@@ -10,9 +25,11 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { Ionicons } from '@expo/vector-icons';
 import { useTheme } from '../context/ThemeContext';
 
+// Get screen width for responsive design
 const { width } = Dimensions.get('window');
 
 export default function RestaurantCard({ restaurant, onPress }) {
+  // Access theme colors and styling from ThemeContext
   const { theme } = useTheme();
 
   return (
